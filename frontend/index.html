@@ -6,19 +6,30 @@
 </head>
 <body>
   <h1>Water Level Dashboard</h1>
-  <p id="water-level">Loading...</p>
+  <p id="water-level1">Loading...</p>
+  <p id="water-level2">Loading...</p>
+  <p id="water-level3">Loading...</p>
 
   <script>
     async function fetchWater() {
-      const res = await fetch("http://127.0.0.1:8000/water"); // fetch sends a HTTP get request to the /water endpoint (listens at 121 whatever endpoint)
-      const data = await res.json(); // turns json response into javascript object
-      document.getElementById("water-level").textContent =
-        `Water Level: ${data.water_level} L (at ${data.timestamp})`;
+        const res = await fetch("http://127.0.0.1:8000/water"); // fetch sends a HTTP get request to the /water endpoint (listens at 121 whatever endpoint)
+        const data = await res.json(); // turns json response into javascript object
+
+        document.getElementById("water-level").textContent = data.water_level ?? "No data yet";
+        document.getElementById("timestamp").textContent = data.timestamp ?? "";
+        
+        // document.getElementById("water-level").textContent =
+        // `Water Level: ${data.water_level} L (at ${data.timestamp})`;
     }
 
     fetchWater();
     // refresh every 10 seconds
     setInterval(fetchWater, 10000);
   </script>
+
+  <div>
+    <p>Water level: <span id="water-level"></span></p>
+    <p>Timestamp: <span id="timestamp"></span></p>
+  </div>
 </body>
 </html>
