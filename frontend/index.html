@@ -3,33 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <title>Water Level</title>
+  
 </head>
 <body>
+
+
+  <nav>
+    <p>🖥️ Dashboard</p>
+    <p>📊Analytics</p>
+    <p>Predictions</p>
+    <p>Data</p>
+  </nav>
+
+
+  
+
+  
+
+  <div>
+    <section class="water-card" role="region" aria-label="Current water level"
+         data-current="1.4" data-capacity="3" data-delta="-0.17">
+  <header class="card-header">
+    <span class="icon icon-drop" aria-hidden="true"></span>
+    <h2 class="title">Current Water Level</h2>
+    <span class="status-badge" id="statusBadge">Moderate</span>
+  </header>
+
+  <div class="center">
+    <p class="reading">
+      <span class="level" id="levelValue">1.4</span><span class="unit">m</span>
+    </p>
+    <p class="sub">
+      of <span class="capacity" id="capacityValue">3m</span> capacity
+    </p>
+  </div>
+
+  <div class="bar-wrap" aria-labelledby="progressLabel">
+    <div id="progressLabel" class="sr-only">Tank Level</div>
+    <div class="bar" role="progressbar"
+         aria-label="Tank level percentage"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="47.7">
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+    <div class="bar-meta">
+      <span class="bar-title">Tank Level</span>
+      <span class="percent" id="percentText">47.7%</span>
+    </div>
+  </div>
+
+  <div class="delta" id="deltaRow">
+    <span class="delta-icon" aria-hidden="true"></span>
+    <span class="delta-text" id="deltaText">0.17m from last reading</span>
+  </div>
+
+  <aside class="info">
+    <p><strong>Info:</strong> Water level is measured using ultrasonic sensors positioned at the top of the storage tank. Readings are updated every 15 minutes to provide real-time monitoring of water availability.</p>
+  </aside>
+</section>
+  </div>
+
+  
+  
+  
   <h1>Water Level Dashboard</h1>
   <p id="water-level1">Loading...</p>
   <p id="water-level2">Loading...</p>
   <p id="water-level3">Loading...</p>
 
-  <script>
-    async function fetchWater() {
-        const res = await fetch("http://127.0.0.1:8000/water"); // fetch sends a HTTP get request to the /water endpoint (listens at 121 whatever endpoint)
-        const data = await res.json(); // turns json response into javascript object
-
-        document.getElementById("water-level").textContent = data.water_level ?? "No data yet";
-        document.getElementById("timestamp").textContent = data.timestamp ?? "";
-        
-        // document.getElementById("water-level").textContent =
-        // `Water Level: ${data.water_level} L (at ${data.timestamp})`;
-    }
-
-    fetchWater();
-    // refresh every 10 seconds
-    setInterval(fetchWater, 10000);
-  </script>
-
-  <div>
-    <p>Water level: <span id="water-level"></span></p>
-    <p>Timestamp: <span id="timestamp"></span></p>
-  </div>
+  <p>Water level:<span id="water-level"></span></p>
+  <p>Timestamp: <span id="timestamp"></span></p>
+  <script src="script.js"></script> 
 </body>
 </html>
