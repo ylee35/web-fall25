@@ -2,76 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Level</title>
-  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-
-  <nav>
-    <p>🖥️ Dashboard</p>
-    <p>📊Analytics</p>
-    <p>Predictions</p>
-    <p>Data</p>
-  </nav>
-
-
-  
-
-  
-
-  <div>
-    <section class="water-card" role="region" aria-label="Current water level"
-         data-current="1.4" data-capacity="3" data-delta="-0.17">
-  <header class="card-header">
-    <span class="icon icon-drop" aria-hidden="true"></span>
-    <h2 class="title">Current Water Level</h2>
-    <span class="status-badge" id="statusBadge">Moderate</span>
+  <header>
+    <img src="./images/malawi_logo.png" alt="Red, black, and green waterdrop">
+    <h1>Malawi Water Level Monitoring System</h1>
   </header>
 
-  <div class="center">
-    <p class="reading">
-      <span class="level" id="levelValue">1.4</span><span class="unit">m</span>
-    </p>
-    <p class="sub">
-      of <span class="capacity" id="capacityValue">3m</span> capacity
-    </p>
-  </div>
+  <nav id="menu">
+    <p><a href="#dashboard">🖥️ Dashboard</a></p>
+    <p><a href="#analytics">📊 Analytics</a></p>
+    <p><a href="#predictions">🧠 Predictions</a></p>
+    <p><a href="#data">📈 Data</a></p>
+  </nav>
 
-  <div class="bar-wrap" aria-labelledby="progressLabel">
-    <div id="progressLabel" class="sr-only">Tank Level</div>
-    <div class="bar" role="progressbar"
-         aria-label="Tank level percentage"
-         aria-valuemin="0" aria-valuemax="100" aria-valuenow="47.7">
-      <div class="bar-fill" id="barFill"></div>
+  <section class="page" id="dashboard">
+    <div id="top">
+      <div id="current-water-level"></div>
+      <div id="right-boxes">
+          <div id="sensor-status"></div>
+          <div id="tank-capacity"></div>
+          <div id="days-since-install"></div>
+          <div id="project-impact"></div>
+      </div>
     </div>
-    <div class="bar-meta">
-      <span class="bar-title">Tank Level</span>
-      <span class="percent" id="percentText">47.7%</span>
+    <div id="about-system">
     </div>
-  </div>
-
-  <div class="delta" id="deltaRow">
-    <span class="delta-icon" aria-hidden="true"></span>
-    <span class="delta-text" id="deltaText">0.17m from last reading</span>
-  </div>
-
-  <aside class="info">
-    <p><strong>Info:</strong> Water level is measured using ultrasonic sensors positioned at the top of the storage tank. Readings are updated every 15 minutes to provide real-time monitoring of water availability.</p>
-  </aside>
-</section>
-  </div>
-
+  </section>
   
-  
-  
-  <h1>Water Level Dashboard</h1>
+  <section class="page" id="analytics"></section>
+  <section class="page" id="predictions"></section>
+  <section class="page" id="data"></section>
+
+  <!-- <h1>Water Level Dashboard</h1>
   <p id="water-level1">Loading...</p>
   <p id="water-level2">Loading...</p>
   <p id="water-level3">Loading...</p>
 
   <p>Water level:<span id="water-level"></span></p>
-  <p>Timestamp: <span id="timestamp"></span></p>
+  <p>Timestamp: <span id="timestamp"></span></p> -->
   <script src="script.js"></script> 
 </body>
 </html>
