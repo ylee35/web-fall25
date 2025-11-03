@@ -12,7 +12,7 @@
     <h1>Malawi Water Level Monitoring System</h1>
   </header>
 
-  <nav id="menu">
+  <!-- <nav id="menu">
     <p><a href="#dashboard">🖥️ Dashboard</a></p>
     <p><a href="#analytics">📊 Analytics</a></p>
     <p><a href="#predictions">🧠 Predictions</a></p>
@@ -33,17 +33,56 @@
     </div>
   </section>
   
-  <section class="page" id="analytics"></section>
-  <section class="page" id="predictions"></section>
-  <section class="page" id="data"></section>
+  <section class="page" id="analytics">
+    <h1>Water Usage Analytics</h1>
+    <div id="quick-stats"></div>
+    <div id="views"></div>
+    <div id="daily-view">
+      <div id="24-hours"></div>
+      <div id="hourly"></div>
+    </div>
+    <div id= "weekly-view">
+      <div id="water-trend"></div>
+    </div>
+    <div id = "monthly-view">
+      <div id="water-level"></div>
+    </div>
+  </section>
 
-  <!-- <h1>Water Level Dashboard</h1>
+  
+  <section class="page" id="predictions">
+    <h2>AI Predictions and Insights</h2>
+    <div id="water-forecast"></div>
+    <div id="smart-alerts"></div>
+          <div id="water-shortage-alert">
+            <p>36-Hour Water Level Forecast</p>
+          </div>
+          <div id="peak-usage-period"></div>
+          <div id="optimal-refill-time"></div>
+  </section>
+
+  
+  <section class="page" id="data">
+    <h2>Historical Data</h2>
+    <div id="history">
+      <ul>
+        <li>Timestamp: 2025-10-20 21:45:00</li>
+        <li>Timestamp: 2025-10-15 13:19:57</li>
+        <li>Timestamp: 2025-10-12 06:40:30</li>
+        <li>TImestamp: 2025-10-01 12:00:21</li>
+        <li>Timestamp: 2025-09-08 10:10:00</li>
+        <li>TImestamp: 2025-09-15 20:49:17</li>
+      </ul>
+    </div>
+  </section> -->
+
+  <h1>Water Level Dashboard</h1>
   <p id="water-level1">Loading...</p>
   <p id="water-level2">Loading...</p>
   <p id="water-level3">Loading...</p>
 
   <p>Water level:<span id="water-level"></span></p>
-  <p>Timestamp: <span id="timestamp"></span></p> -->
+  <p>Timestamp: <span id="timestamp"></span></p>
   <script src="script.js"></script> 
 </body>
 </html>

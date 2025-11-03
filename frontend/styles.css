@@ -28,6 +28,11 @@ h1 {
     display: inline-block;
 }
 
+h2 {
+    color: black;
+    font-size: 10px;
+}
+
 #menu {
     width: 100%;
     margin: 10px auto;
@@ -35,4 +40,19 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+#water-shortage-alert {
+    color: red;
+    width: 40%;
+}
+
+#peak-usage-period{
+    color: black;
+    width: 40%;
+}
+
+#optimal-refill-time{
+    color: black; 
+    width: 40%;
 }
