@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "root"; // tuftstuftsewb.eastafrica@gmail.com
-    $password = ""; // EWBMalawi2526*
-    $dbname = "ewb-water-db";
+    $username = "ugozuyrtgs4ye"; // tuftstuftsewb.eastafrica@gmail.com
+    $password = "Abcdefghij1213."; // EWBMalawi2526*
+    $dbname = "dby3hgorf87zhi";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

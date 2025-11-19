@@ -26,104 +26,46 @@
   </header>
 
   <nav id="menu">
-    <p><a href="#dashboard">🖥️ Dashboard</a></p>
-    <p><a href="#analytics">📊 Analytics</a></p>
-    <p><a href="#data">📈 Data</a></p>
+    <ul>
+        <li>
+            <button class="tab" onclick = "showPage('dashboard')">🖥️ Dashboard
+            </button>
+        </li>
+
+        <li>
+            <button class="tab" onclick = "showPage('analytics')">
+                📊 Analytics
+            </button>
+        </li>
+
+        <li>
+            <button class="tab" onclick = "showPage('data')">
+                📈 Data
+            </button>
+        </li>   
+    </ul>
   </nav>
 
-    <!-- Display data directly from csv file -->
-    <!-- <?php
-        $csvFile = 'data.csv'; // Replace with the actual path to your CSV file
-
-        if (!file_exists($csvFile)) {
-            echo "<p>Error: CSV file not found at '$csvFile'.</p>";
-        } else {
-            $handle = fopen($csvFile, "r");
-
-            if ($handle === FALSE) {
-                echo "<p>Error: Could not open the CSV file.</p>";
-            } else {
-                echo '<table>';
-
-                // Read the header row
-                if (($header = fgetcsv($handle)) !== FALSE) {
-                    echo '<thead><tr>';
-                    foreach ($header as $colName) {
-                        echo '<th>' . htmlspecialchars($colName) . '</th>';
-                    }
-                    echo '</tr></thead>';
-                }
-
-                echo '<tbody>';
-                // Read and display data rows
-                while (($row = fgetcsv($handle)) !== FALSE) {
-                    echo '<tr>';
-                    foreach ($row as $cell) {
-                        echo '<td>' . htmlspecialchars($cell) . '</td>';
-                    }
-                    echo '</tr>';
-                }
-                echo '</tbody>';
-
-                echo '</table>';
-                fclose($handle);
-            }
-        }
-    ?> -->
-
-    <!-- Display data from database -->
-    <!-- <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ewb-water-db";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        echo "Connected successfully!";
-
-        $sql = "SELECT * FROM water_levels";
-        $result = mysqli_query($conn, $sql);
-
-        // Fetch the result data
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-                echo '<p>';
-                echo "id: " . $row["id"]. " - Timestamp: " . $row["timestamp"]. " - Water Level: " . $row["water_level"]."";
-                echo '</p>';
-            }
-        } else {
-            echo "0 results";
-        }
-
-        $conn->close();
-    ?> -->
-
-
-
-
   <div id ="workspace">
-    <section class="page" id="dashboard">
-
-    </section>
+    <div class="page" id="dashboard">
+        <p> this is dashboard content </p>
+        <div class="full-screen-box">
+            <h1>Live Data Feed</h1>
+        </div>
+    </div>
   
-    <section class="page" id="analytics">
-        <div id = "analytics_header"> </div>
+    <div class="page" id="analytics" hidden>
+        <div id = "analytics_header"> 
         <h2> Water Usage Analytics </h2>
+        </div>
 
 
-        <!-- <div id = "today_usage"> 
+        <div id = "today_usage"> 
         <p> Today's Usage </p> </div>
         <div id = "weekly_average"> 
         <p> Weekly Average </p> </div>
         <div id = "effciency"> 
-        <p> Efficiency </p> </div> -->
+        <p> Efficiency </p> </div>
         
         <nav id="views">
           <p><a href="#WeeklyView"> Weekly View</a></p>
@@ -131,15 +73,15 @@
           <p><a href="#YearlyView"> YearlyView</a></p>
         </nav>
 
-    </section>
+    </div>
     
 
-    <section class="page" id="data">
-    
-    </section>
+    <div class="page" id="data" hidden>
+        <p>data content</p>
+    </div>
   </div>
   
 
-  <script src="script.js"></script> 
+  <script src="index.js"></script> 
 </body>
 </html>
