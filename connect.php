@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "ugozuyrtgs4ye"; // tuftstuftsewb.eastafrica@gmail.com
-    $password = "Abcdefghij1213."; // EWBMalawi2526*
-    $dbname = "dby3hgorf87zhi";
+    $username = "root";
+    $password = "";
+    $dbname = "ewb-water-db";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,6 +14,7 @@
 
     echo "Connected successfully!";
 
+    $conn->query("TRUNCATE TABLE water_levels");
 
     $file = fopen("data.csv", "r");
     fgetcsv($file); // skip header
